@@ -1,10 +1,43 @@
-1. Collection, processing and use of personal data
-        1-1. When you visit this service or use the functional services provided by this service, we will, depending on the nature of the service function, ask you to provide the necessary personal data, and process and use your personal data within the scope of the specific purpose; Agree, this service will not use personal data for other purposes
-        1-2. When you send messages and use the functions of this service, this service will retain the identification information for the purpose of confirming your identity.
-        1-3. In order to provide accurate services, we will conduct statistics and analysis on the content of the questionnaires collected. Except for internal research, we will publish the statistical data and explanatory text as necessary, but do not involve specific personal information.
-        1-4. You can make a request to us or delete inaccurate information provided by the service.
-        
-        
-2.Data protection
-        2-1. Only authorized personnel can access your personal data. All relevant processing personnel have signed confidentiality contracts. Those who violate the confidentiality obligations will be subject to relevant legal sanctions.
-        2-2 If it is necessary to entrust other units to provide services due to business needs, this service will also strictly require them to comply with their confidentiality obligations, and take necessary inspection procedures to confirm that they will actually comply.
+Outo (奧托) Privacy Policy
+Discord application ID: 998462106250784888
+Last updated: 2026-09-22
+
+1. What Outo does
+
+Outo is a configurable Discord auto-reply bot. Server users with the required permissions create trigger words or patterns and predefined replies. Outo compares incoming server message text with these rules and sends a configured reply when a rule matches. Rules support exact, substring and regular-expression matching, reply probabilities, weighted reply choices and channel restrictions.
+
+2. Ordinary messages and Message Content access
+
+The auto-reply feature processes message text in memory, including the textual representation of custom emoji, to find matching rules. It uses server and channel identifiers to select the relevant settings and checks message metadata to ignore bot, system and direct messages. It does not perform image recognition or download ordinary message attachments for matching.
+
+The auto-reply handler does not write incoming conversation text to the database or create a conversation archive. The Discord client may temporarily hold message objects in its runtime memory/cache; this is not a promise of immediate deletion after each comparison. Ordinary conversation text is not sent to an AI provider by this feature or used by Outo to train machine-learning or AI models.
+
+Channel restrictions control whether the auto-reply handler processes a message for matching. They do not prevent Discord from delivering events to the client in channels the bot can access. Server administrators can remove the bot's View Channel permission to prevent that access.
+
+3. Information stored outside Discord
+
+Outo stores server configuration in a database on its hosting machine. This includes server IDs, configured channel and role/user permission IDs, trigger text, predefined replies, matching modes, probabilities, reply weights and enabled/disabled settings. These are settings deliberately provided through commands and forms, rather than a history of ordinary conversations.
+
+Trigger-management action records contain the acting user's Discord ID and username, a timestamp, the action and the relevant rule details. The active action-log writer keeps the latest 100 entries per server as new entries are added. This is a count limit, not a 30-day deletion policy. Settings remain until changed or removed; removing a rule does not also erase earlier action-log entries. Removing the bot from a server does not currently trigger automatic deletion of stored server settings.
+
+Operational and diagnostic logs may contain identifiers, errors and submitted configuration values. They are separate from the action-log count limit and should not be treated as automatically deleted after 30 days.
+
+4. Replies and support requests
+
+Configured replies are sent through Discord and can be seen by people with access to the destination channel. Reply text may contain emoji or media links rendered by Discord. Rule lists and action records can be displayed through the bot's commands, so users should not put secrets in rule configuration.
+
+If you choose to use /contact-dev, your submitted text and images, Discord identity and source server/channel context are forwarded to the developer through Discord to handle your request. This is a user-initiated support feature, separate from ordinary message matching. Do not submit passwords, tokens or other unnecessary sensitive information.
+
+5. Controls and deletion requests
+
+Authorized server users can edit, disable or remove trigger rules and configure allowed or excluded channels. Server administrators can change the bot's Discord permissions or remove it. There is currently no individual-user opt-out switch for auto-reply matching within an enabled channel.
+
+For access, correction or deletion requests concerning stored settings, action records or support submissions, contact the developer through /contact-dev or the support server: https://discord.gg/mPCEATJDve. Include the relevant server/user ID and what you want removed, but no passwords or tokens. Requests may require verification of authority over the affected data. Removing a rule alone does not remove all copies from action records, diagnostic logs or any operational backups; identify these in a deletion request when relevant.
+
+6. Purpose, access and third-party services
+
+Data is used to provide configured replies, manage server settings, troubleshoot the service and respond to support requests. Outo does not use ordinary conversation content for advertising, sale or AI training. Database and operational-log access is through the bot's hosting environment; the rule-management commands expose information within Discord according to their behavior and permissions. Discord and any media-hosting services used in configured links have their own privacy policies.
+
+7. Updates
+
+Changes to this policy will be published at this same URL with an updated date. The developer can be contacted through the support methods above about this policy and current data handling.
